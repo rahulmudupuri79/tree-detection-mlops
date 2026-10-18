@@ -90,3 +90,13 @@ The runnable example is in `src/inspect_yolo_label.py`. Its example label is syn
 - [ ] Record exact source/version and citation; keep dataset files out of Git.
 
 Candidate review is documented in `docs/dataset_layout.md`. No dataset has been downloaded yet.
+
+
+### User dataset update — repository inspection
+- [x] Inspected the GitHub `datasets/trees/` directory on `main`.
+- [x] Confirmed nine PNG files are present: `1.png` through `9.png`; combined size is approximately 2.45 MB.
+- [ ] Inspect image content/dimensions and confirm provenance/license.
+- [ ] Check whether separate annotations exist elsewhere; the inspected `datasets/trees/` directory currently contains images only, with no label files.
+- [ ] If these images are intended for training, annotate individual trees before training; images alone are not labeled object-detection examples.
+
+The images are committed to GitHub. Their visual content, source/license, and annotation status have not yet been verified.
