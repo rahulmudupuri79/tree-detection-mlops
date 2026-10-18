@@ -13,3 +13,8 @@ models/*
 .ipynb_checkpoints/
 .pytest_cache/
 .coverage
+
+# Local MLflow SQLite database files
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
