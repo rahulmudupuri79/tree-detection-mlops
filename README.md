@@ -24,10 +24,10 @@ The initial workflow targets Windows with 16 GB RAM and supports CPU inference. 
 
 ## Quick start (Windows PowerShell)
 
-Use Python 3.11 if available:
+Use Python 3.13 for this project:
 
 ```powershell
-py -3.11 -m venv .venv
+py -3.13 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
