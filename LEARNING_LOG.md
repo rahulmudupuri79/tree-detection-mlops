@@ -58,3 +58,12 @@ MLflow initially rejected the filesystem tracking backend. The script now uses a
 - Mean RGB values: `[117.81, 114.86, 128.04]`
 
 The user correctly explained that a NumPy shape of `(600, 800, 3)` represents an image 800 pixels wide and 600 pixels tall.
+
+
+### YOLO label coordinate exercise
+- [x] Explain normalized YOLO box values and convert width/height to pixels.
+- [x] Correctly answer the example: a label of `0 0.5 0.5 0.2 0.4` on an 800 × 600 image gives a 160 × 240 pixel box.
+- [ ] Run `python src/inspect_yolo_label.py` and compare the output with the expected values.
+- [ ] Explain what the four pixel corner coordinates represent.
+
+The runnable example is in `src/inspect_yolo_label.py`. Its example label is synthetic and is not a label from a real tree dataset.
