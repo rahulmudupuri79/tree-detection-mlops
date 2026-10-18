@@ -26,7 +26,7 @@ Python 3.13 is the selected project version. The shared terminal output has not 
   - person: 0.431
 - Output path reported: `C:\\Jobs\\tree-detection-mlops\\artifacts\\bus_annotated.jpg`
 
-These values are copied from the user's terminal output. The annotated image and MLflow UI have not been independently inspected in this conversation.
+These values are copied from the user's terminal output. User confirmed the MLflow experiment is visible in the UI. The run's metric and artifact details have not yet been confirmed separately.
 
 ## Concepts introduced
 - **Inference:** using an already-trained model to make predictions.
@@ -39,4 +39,4 @@ These values are copied from the user's terminal output. The annotated image and
 MLflow raised an exception when using the filesystem tracking backend. The repository script is being updated to use a local SQLite database (`mlflow.db`) instead.
 
 ## Next step
-After pulling the latest repository changes, rerun the script and open MLflow using the SQLite tracking URI. Confirm that the run and artifact appear in the UI.
+Open the visible run in MLflow and confirm the detection_count and inference_seconds metrics plus the annotated image artifact. Then visually inspect the saved image.
