@@ -42,8 +42,19 @@ MLflow initially rejected the filesystem tracking backend. The script now uses a
 **Current lesson:** inspect image dimensions, channels, and pixel values.
 
 - [ ] Confirm Python 3.13 with `py -3.13 --version`.
-- [ ] Run `python src/inspect_image.py`.
-- [ ] Explain the printed dimensions, array shape, mode, and RGB pixel values in your own words.
-- [ ] Complete the follow-up exercise.
+- [x] Run `python src/inspect_image.py` — user supplied terminal output.
+- [x] Explain dimensions, array shape, image mode, and RGB pixel values.
+- [x] Answer the shape check: `(600, 800, 3)` means 800 pixels wide and 600 pixels tall.
+- [ ] Complete the dataset-label exercise in the next lesson.
 
-The inspection script reads the generated `artifacts/bus_annotated.jpg`. Results are not recorded as verified until the user runs it and shares the output.
+### Verified image-inspection output
+- Format/mode: JPEG / RGB
+- Image size (width, height): `(810, 1080)`
+- NumPy shape (height, width, channels): `(1080, 810, 3)`
+- Data type: `uint8`; values range from 0 to 255
+- Pixel count: `874,800`
+- First pixel RGB: `[172, 146, 119]`
+- Center pixel RGB: `[1, 85, 155]`
+- Mean RGB values: `[117.81, 114.86, 128.04]`
+
+The user correctly explained that a NumPy shape of `(600, 800, 3)` represents an image 800 pixels wide and 600 pixels tall.
