@@ -38,5 +38,12 @@ These values are copied from the user's terminal output. User confirmed the MLfl
 ## Issue encountered
 MLflow initially rejected the filesystem tracking backend. The script now uses a local SQLite database (`mlflow.db`); the user confirmed the experiment is visible in the UI.
 
-## Next step
-Begin Phase 2: learn image and dataset fundamentals, one manageable step at a time. Confirm Python 3.13 with `py -3.13 --version` if not already checked.
+## Phase 2 — Image and dataset fundamentals
+**Current lesson:** inspect image dimensions, channels, and pixel values.
+
+- [ ] Confirm Python 3.13 with `py -3.13 --version`.
+- [ ] Run `python src/inspect_image.py`.
+- [ ] Explain the printed dimensions, array shape, mode, and RGB pixel values in your own words.
+- [ ] Complete the follow-up exercise.
+
+The inspection script reads the generated `artifacts/bus_annotated.jpg`. Results are not recorded as verified until the user runs it and shares the output.
