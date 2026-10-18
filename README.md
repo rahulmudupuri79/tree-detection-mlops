@@ -34,12 +34,12 @@ pip install -r requirements.txt
 python src/first_inference.py
 ```
 
-The first run downloads the YOLO26n pretrained weights and sample image. It should create `artifacts/bus_annotated.jpg` and log a run to the local `mlruns/` directory.
+The first run downloads the YOLO26n pretrained weights and sample image. It should create `artifacts/bus_annotated.jpg` and log a run to the local SQLite database `mlflow.db`.
 
 To inspect the experiment:
 
 ```powershell
-mlflow ui --backend-store-uri ./mlruns
+mlflow ui --backend-store-uri sqlite:///./mlflow.db
 ```
 
 Open http://127.0.0.1:5000 in a browser.
