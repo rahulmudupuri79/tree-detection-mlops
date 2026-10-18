@@ -118,3 +118,14 @@ We can use the files to learn image inspection and annotation workflows, but thi
 - [ ] Choose an explicitly licensed aerial/tree-detection dataset and record source, version, license, and attribution.
 
 The act of capturing a screenshot does not itself grant rights to the underlying Google Maps imagery. Current Google Maps Platform terms expressly restrict use of Google Maps Content to improve ML/AI models; the applicable terms depend on how the content was obtained and used.
+
+
+### Nine-image inspection — results supplied by user
+
+- [x] Confirmed the script finds nine PNG files in `datasets/trees/`.
+- [x] Recorded that all nine report mode RGBA and have different dimensions.
+- [ ] Check alpha-channel values to determine whether any pixels are transparent.
+- [ ] Decide whether conversion to RGB is appropriate; preserve the original files.
+
+Observed dimensions (width × height): 327×445, 428×367, 415×517, 417×353, 505×337, 360×411, 447×422, 275×197, and 518×297. RGBA indicates an alpha channel, but does not by itself prove that any pixel is transparent.
+
