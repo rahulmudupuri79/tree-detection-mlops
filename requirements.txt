@@ -1,0 +1,3 @@
+# Initial CPU-friendly inference and experiment tracking dependencies.
+ultralytics
+mlflow
