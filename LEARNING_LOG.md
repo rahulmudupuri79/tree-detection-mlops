@@ -67,3 +67,10 @@ The user correctly explained that a NumPy shape of `(600, 800, 3)` represents an
 - [ ] Explain what the four pixel corner coordinates represent.
 
 The runnable example is in `src/inspect_yolo_label.py`. Its example label is synthetic and is not a label from a real tree dataset.
+
+
+### YOLO label coordinate conversion — verified
+- [x] Run `python src/inspect_yolo_label.py` successfully; user supplied terminal output.
+- [x] Verify the box size is 160 × 240 pixels for an 800 × 600 image.
+- [x] Verify the corner coordinates are `(320, 180, 480, 420)`.
+- [ ] Next: inspect the relationship between image files and annotation files in a real dataset.
