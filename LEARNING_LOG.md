@@ -141,3 +141,14 @@ Observed dimensions (width × height): 327×445, 428×367, 415×517, 417×353, 5
 
 A preparation script was added at `src/prepare_tree_images.py`. It converts each image to RGB and saves a JPEG copy at quality 95 in a separate folder. JPEG encoding is lossy, so originals are preserved; if pixel-exact lossless copies are preferred, use RGB PNG output instead.
 
+
+
+### RGB preparation — user supplied output
+
+- [x] Created nine RGB JPEG copies in `datasets/trees_rgb/`.
+- [x] Confirmed each copy retained its source image's dimensions.
+- [x] Original PNGs were preserved.
+- [ ] Next: annotate one image with the single class `tree` and inspect the exported YOLO label file.
+
+Annotation guidance was added to `docs/tree_annotation_guide.md`. It defines consistent rules for individual crowns, overlapping crowns, and ambiguous cases. Because the imagery was described as Google Maps screenshots, applicable rights should be confirmed before training, publishing, or distributing a dataset/model based on it.
+
