@@ -1,10 +1,13 @@
 # Learning Log
 
+## Python version
+Python 3.13 (user preference; verify it is installed with `py -3.13 --version`).
+
 ## Current milestone
 **Phase 1 — First successful inference**
 
 ## Status
-- [ ] Create and activate a compatible Python virtual environment.
+- [ ] Create and activate a Python 3.13 virtual environment.
 - [ ] Install dependencies.
 - [ ] Run pretrained inference on the sample image.
 - [ ] Inspect the annotated output image.
