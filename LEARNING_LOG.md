@@ -80,3 +80,13 @@ The runnable example is in `src/inspect_yolo_label.py`. Its example label is syn
 - [x] Record the expected YOLO image/label folder convention in `docs/dataset_layout.md`.
 - [x] Document an illustrative `data.yaml`, split meanings, licensing, and data-leakage cautions.
 - [ ] Next checkpoint: choose/identify a real tree dataset and verify its class mapping, license, and annotation format before downloading or training.
+
+
+### Real dataset review — NEON Tree Evaluation Benchmark
+- [x] Identify a task-aligned candidate with individual-tree bounding boxes.
+- [x] Check class mapping and annotation format: one `Tree` class; Pascal VOC XML bounding boxes.
+- [x] Review license notes: repository says CC0, but underlying NEON imagery has separate attribution/data-use terms; check the exact downloaded version and cite it.
+- [ ] Choose a small RGB-only subset and inspect an image/XML pair before downloading or converting labels.
+- [ ] Record exact source/version and citation; keep dataset files out of Git.
+
+Candidate review is documented in `docs/dataset_layout.md`. No dataset has been downloaded yet.
