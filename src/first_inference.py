@@ -21,8 +21,8 @@ def main() -> None:
     """Run inference, save an annotated image, and record the run."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Use a local, repository-relative MLflow tracking directory.
-    mlflow.set_tracking_uri((ROOT / "mlruns").as_uri())
+    # Store MLflow tracking metadata in a local SQLite database.
+    mlflow.set_tracking_uri(f"sqlite:///{(ROOT / 'mlflow.db').as_posix()}")
     mlflow.set_experiment("tree-detection-first-inference")
 
     with mlflow.start_run():
