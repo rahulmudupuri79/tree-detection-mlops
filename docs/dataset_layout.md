@@ -63,3 +63,32 @@ Do not put near-duplicate images or images from the same source sequence into di
 3. Check that image/label pairs and split paths are valid.
 4. Inspect sample images with their boxes drawn.
 5. Keep the raw dataset out of Git unless its size and license make committing it appropriate; record the source and version instead.
+
+
+## Candidate dataset review — NEON Tree Evaluation Benchmark
+
+**Recommended candidate for this learning project:** [weecology/NeonTreeEvaluation](https://github.com/weecology/NeonTreeEvaluation), with its associated [Zenodo benchmark data](https://zenodo.org/records/5914554).
+
+### Fit for the project
+
+- Task: individual tree detection in airborne imagery.
+- Labels: the repository documents 30,975 tree annotations across 22 NEON sites.
+- Class: one class, `Tree`.
+- Annotation format: Pascal VOC XML files with bounding boxes around visible standing trees.
+- Data bundle: the Zenodo record lists an 8.4 GB multi-sensor package, including RGB imagery and additional modalities. Do not download the whole bundle just to begin learning.
+
+### License and attribution review
+
+- The benchmark GitHub repository identifies its repository license as CC0 1.0. Do not assume this automatically overrides the terms for the underlying imagery.
+- NEON's current guidance says downloaded data require attribution and its data-use documentation describes CC BY 4.0 terms. Keep the dataset citation and attribution with the project, and verify the terms shown for the specific image files/version when downloading.
+- The Zenodo benchmark record does not make a separate license obvious in its Rights section, so retain this caveat rather than claiming every component is unconditionally CC0.
+
+Sources checked on 2026-10-18:
+- https://github.com/weecology/NeonTreeEvaluation
+- https://zenodo.org/records/5914554
+- https://www.neonscience.org/impact/observatory-blog/getting-started-what-new-users-should-know-about-neon-data
+- https://github.com/NEONScience/neon-data-api/blob/main/docs/content/index.md
+
+### Download decision
+
+No dataset has been downloaded yet. Next, choose a small RGB-only subset and inspect the image/XML pair before converting any annotations to YOLO format. Keep data files outside Git and record the exact source/version and attribution.
