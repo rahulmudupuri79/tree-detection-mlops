@@ -19,12 +19,7 @@ IMAGE_URL = (
 def main() -> None:
     """Run inference, save an annotated image, and record the run."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-<<<<<<< Updated upstream
-    # Store MLflow tracking metadata in a local SQLite database.
-=======
-    # Use a local, repository-relative MLflow tracking directory.
->>>>>>> Stashed changes
+    
     mlflow.set_tracking_uri(f"sqlite:///{(ROOT / 'mlflow.db').as_posix()}")
     mlflow.set_experiment("tree-detection-first-inference")
 
