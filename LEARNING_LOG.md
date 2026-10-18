@@ -129,3 +129,15 @@ The act of capturing a screenshot does not itself grant rights to the underlying
 
 Observed dimensions (width × height): 327×445, 428×367, 415×517, 417×353, 505×337, 360×411, 447×422, 275×197, and 518×297. RGBA indicates an alpha channel, but does not by itself prove that any pixel is transparent.
 
+
+
+### Alpha-channel check — results supplied by user
+
+- [x] Run `python src/check_image_alpha.py` on all nine images.
+- [x] Confirmed every alpha channel has min/max 255 and zero pixels below 255.
+- [x] Concluded that dropping alpha will not discard visible transparency.
+- [ ] Run `python src/prepare_tree_images.py` to create RGB JPEG working copies under `datasets/trees_rgb/`.
+- [ ] Verify the output files and dimensions; keep original PNGs unchanged.
+
+A preparation script was added at `src/prepare_tree_images.py`. It converts each image to RGB and saves a JPEG copy at quality 95 in a separate folder. JPEG encoding is lossy, so originals are preserved; if pixel-exact lossless copies are preferred, use RGB PNG output instead.
+
