@@ -74,3 +74,9 @@ The runnable example is in `src/inspect_yolo_label.py`. Its example label is syn
 - [x] Verify the box size is 160 × 240 pixels for an 800 × 600 image.
 - [x] Verify the corner coordinates are `(320, 180, 480, 420)`.
 - [ ] Next: inspect the relationship between image files and annotation files in a real dataset.
+
+
+### Dataset layout — lesson introduced
+- [x] Record the expected YOLO image/label folder convention in `docs/dataset_layout.md`.
+- [x] Document an illustrative `data.yaml`, split meanings, licensing, and data-leakage cautions.
+- [ ] Next checkpoint: choose/identify a real tree dataset and verify its class mapping, license, and annotation format before downloading or training.
