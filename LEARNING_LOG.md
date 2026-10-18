@@ -102,6 +102,14 @@ Candidate review is documented in `docs/dataset_layout.md`. No dataset has been 
 The images are committed to GitHub. Their visual content, source/license, and annotation status have not yet been verified.
 
 
+### User decision — continue local image inspection
+
+- [x] User chose to keep the nine existing images as the working examples for local learning.
+- [ ] Inspect image dimensions, formats, and color modes with `python src/inspect_tree_images.py`.
+- [ ] Review the output and decide on a tree-labeling approach before any model training.
+
+We can use the files to learn image inspection and annotation workflows, but this choice does not establish permission to train on, redistribute, or publish models based on the underlying Google Maps imagery. Confirm applicable rights before those uses.
+
 ### Dataset provenance and rights caution — Google Maps screenshots
 - [x] User clarified that the nine images are screenshots they captured from Google Maps satellite/top-down neighborhood views.
 - [ ] Do not use these screenshots to train, validate, test, or publish as a reusable dataset unless the applicable rights/terms are confirmed.
