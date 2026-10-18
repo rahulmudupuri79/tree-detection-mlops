@@ -100,3 +100,13 @@ Candidate review is documented in `docs/dataset_layout.md`. No dataset has been 
 - [ ] If these images are intended for training, annotate individual trees before training; images alone are not labeled object-detection examples.
 
 The images are committed to GitHub. Their visual content, source/license, and annotation status have not yet been verified.
+
+
+### Dataset provenance and rights caution — Google Maps screenshots
+- [x] User clarified that the nine images are screenshots they captured from Google Maps satellite/top-down neighborhood views.
+- [ ] Do not use these screenshots to train, validate, test, or publish as a reusable dataset unless the applicable rights/terms are confirmed.
+- [ ] Recommended path: replace them with imagery whose license explicitly permits machine-learning use, or obtain permission for the intended use.
+- [ ] Consider removing the screenshots from the public repository while resolving rights and neighborhood-location privacy concerns.
+- [ ] Choose an explicitly licensed aerial/tree-detection dataset and record source, version, license, and attribution.
+
+The act of capturing a screenshot does not itself grant rights to the underlying Google Maps imagery. Current Google Maps Platform terms expressly restrict use of Google Maps Content to improve ML/AI models; the applicable terms depend on how the content was obtained and used.
