@@ -220,3 +220,13 @@ The actual training output directory reported by Ultralytics was `runs/detect/ru
 - [ ] Confirm rights for the Google Maps screenshots before further model training or sharing model artifacts.
 
 The per-epoch `results.csv` values are the source for this review. They show very poor measured detection quality on the current tiny validation set, not a reliable estimate of how a tree detector would perform on new imagery. The earlier end-of-training console summary showed slightly different mAP values (mAP50 0.0103 and mAP50-95 0.00387); retain both records rather than silently treating them as identical.
+
+
+### Validation annotation visual check — image 6
+
+- [x] User ran the label-preview script for image 6.
+- [x] User confirmed the boxes looked correctly placed around the trees in image 6.
+- [ ] Visually inspect validation image 7 as well.
+- [ ] Confirm imagery usage rights before additional training.
+
+This is a user-reported visual review of image 6 only. It does not establish annotation quality for all images or explain the poor validation metrics.
