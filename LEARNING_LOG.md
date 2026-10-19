@@ -278,7 +278,7 @@ The API tests intentionally use a fake model and synthetic images; they test the
 - [x] Merged PR #3 (`feat/production-hardening`) into `main`.
 - [x] Added FastAPI inference contract tests with a fake detector; the API tests do not claim model accuracy.
 - [x] Added non-root Docker packaging, health checks, upload limits, runtime configuration, Dependabot proposals, and operations documentation.
-- [ ] Verify the post-merge CI run also completes successfully.
+- [x] Post-merge CI on the merge commit completed successfully (Ruff and pytest passed).
 - [ ] Build and scan the container image in CI; lock/audit transitive dependencies.
 - [ ] Add auth/TLS/rate limiting, structured telemetry and SLOs, deployment verification, model approval/rollback, and data/model provenance before any real public deployment.
 
