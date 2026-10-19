@@ -72,3 +72,24 @@ tree-detection-mlops/
 ## Progress tracking
 
 See [LEARNING_LOG.md](LEARNING_LOG.md). Do not record a milestone as completed until its commands have been run and the evidence reviewed.
+
+
+## MLOps engineering foundations
+
+The repository now includes a starter quality gate:
+- GitHub Actions runs Ruff linting and pytest on pushes to `main` and feature branches, pull requests to `main`, and manual dispatch.
+- Unit/integration tests exercise the YOLO dataset validator using temporary synthetic data.
+- Development tools are listed separately in `requirements-dev.txt`.
+- See [MLOps readiness and gaps](docs/mlops_readiness.md) for implemented foundations and the production-readiness backlog.
+
+### Run quality checks locally (PowerShell)
+
+After activating `.venv`:
+
+```powershell
+python -m pip install -r requirements-dev.txt
+ruff check src tests
+python -m pytest -q
+```
+
+CI currently checks code quality and dataset-validator behavior only. It does **not** train a model, validate model accuracy, establish dataset licensing, or make this repository production-ready. Those require separate evidence and milestones.
