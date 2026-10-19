@@ -187,3 +187,24 @@ Current status: **structural checks of the committed label text pass**. This is 
 - [ ] Annotate test images separately before quantitative evaluation; do not include test labels in training.
 
 Status: **structural validation passed; visual annotation quality and test ground truth remain outstanding.**
+
+
+### First tree-model training and prediction — user supplied terminal output
+
+- [x] Confirmed the local environment: Python 3.13.16, Ultralytics 8.4.182, PyTorch 2.14.1+cpu; CPU-only run.
+- [x] Completed a 5-epoch YOLO26n training run using 5 training images and 2 validation images.
+- [x] Confirmed the run saved `best.pt` and `last.pt`.
+- [x] Ran prediction on `datasets/trees_rgb/8.jpg` with the trained `best.pt` checkpoint.
+- [x] Opened the prediction output and confirmed the image had no predicted boxes.
+- [ ] Improve the experiment only after confirming the imagery's applicable rights and selecting data permitted for ML use.
+- [ ] Use a suitably licensed dataset with enough labeled examples and a held-out evaluation set before drawing conclusions about model quality.
+
+Reported end-of-training validation metrics:
+- Precision: 0.00333
+- Recall: 0.5
+- mAP50: 0.0103
+- mAP50-95: 0.00387
+
+The model predicted **no detections** on image 8 at confidence threshold 0.10. Image 8 currently has no ground-truth label, so this is a visual prediction check, not a measurable test result. With only five training images, two validation images, and five epochs, these results are not evidence of a reliable tree detector.
+
+The actual training output directory reported by Ultralytics was `runs/detect/runs/tree_detection/first_experiment`; the prediction directory was `runs/detect/runs/tree_detection/predict_image_8`. These paths are based on the user's terminal output. The dataset was described as Google Maps screenshots; this log records the experiment but does not establish that the imagery may lawfully be used for model training or publication. Confirm applicable terms before further training or sharing derived artifacts.
