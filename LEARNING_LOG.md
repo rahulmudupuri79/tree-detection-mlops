@@ -152,3 +152,15 @@ A preparation script was added at `src/prepare_tree_images.py`. It converts each
 
 Annotation guidance was added to `docs/tree_annotation_guide.md`. It defines consistent rules for individual crowns, overlapping crowns, and ambiguous cases. Because the imagery was described as Google Maps screenshots, applicable rights should be confirmed before training, publishing, or distributing a dataset/model based on it.
 
+
+
+### Annotation validation — next milestone
+
+- [x] User reports that YOLO `.txt` annotations are extracted into a local folder.
+- [ ] Run `src/validate_yolo_dataset.py` against the actual image and label folders.
+- [ ] Confirm the seven labeled training images have matching label files and valid box values.
+- [ ] Keep the six intended test images separate from training; for quantitative evaluation, annotate their ground truth separately and do not train on those labels.
+- [ ] Manually inspect a few boxes on the images; structural validation cannot confirm that boxes correctly surround tree crowns.
+
+A validator was added at `src/validate_yolo_dataset.py`. It checks image/label basename matching, YOLO's five-field detection format, numeric normalized coordinates, class IDs, positive box sizes, and image boundaries. Missing label files are warnings because unlabeled test images may be intentional; labels with no matching image and invalid label values are errors.
+
