@@ -270,3 +270,16 @@ Changes were merged to `main` through PR #2. No local training or inference was 
 - [ ] Add production authentication, rate limiting, telemetry, SLOs, model governance, and rollback procedures.
 
 The API tests intentionally use a fake model and synthetic images; they test the service contract and request validation, not the accuracy of the current tree detector. The repository is not claimed to be production-certified.
+
+
+### Production-hardening tranche — merged to main
+
+- [x] Pull-request CI passed on the production-hardening changes: Ruff lint and pytest completed successfully.
+- [x] Merged PR #3 (`feat/production-hardening`) into `main`.
+- [x] Added FastAPI inference contract tests with a fake detector; the API tests do not claim model accuracy.
+- [x] Added non-root Docker packaging, health checks, upload limits, runtime configuration, Dependabot proposals, and operations documentation.
+- [ ] Verify the post-merge CI run also completes successfully.
+- [ ] Build and scan the container image in CI; lock/audit transitive dependencies.
+- [ ] Add auth/TLS/rate limiting, structured telemetry and SLOs, deployment verification, model approval/rollback, and data/model provenance before any real public deployment.
+
+This milestone improves engineering foundations but does not certify the model or service for production. The tree model's earlier metrics were extremely poor, and the existing imagery's rights need to be confirmed before further training or distribution.
