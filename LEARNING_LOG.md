@@ -175,3 +175,15 @@ A validator was added at `src/validate_yolo_dataset.py`. It checks image/label b
 - [ ] Annotate the six held-out test images separately before measuring test performance. Keep their labels out of training.
 
 Current status: **structural checks of the committed label text pass**. This is not yet a visual quality review or model evaluation.
+
+
+### Local YOLO validation — completed
+
+- [x] User ran `python src/validate_yolo_dataset.py --images-dir datasets/trees_rgb --labels-dir datasets/annotations` locally.
+- [x] Validator reported 13 images and 7 label files.
+- [x] All seven label files parsed successfully: image 1 has 1 box, 2 has 2, 3 has 1, 4 has 3, 5 has 6, 6 has 2, and 7 has 2 — 17 annotated boxes total.
+- [x] Validator reported 6 warnings for images 8–13, no errors; these are expected because the images are reserved for testing and currently have no label files.
+- [ ] Visually review boxes against image content. Structural validation does not prove that each box tightly and correctly encloses a tree.
+- [ ] Annotate test images separately before quantitative evaluation; do not include test labels in training.
+
+Status: **structural validation passed; visual annotation quality and test ground truth remain outstanding.**
