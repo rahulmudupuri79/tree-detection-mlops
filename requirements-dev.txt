@@ -1,0 +1,3 @@
+# Tools used for local quality checks and CI.
+pytest>=8.3,<9
+ruff>=0.11,<1
