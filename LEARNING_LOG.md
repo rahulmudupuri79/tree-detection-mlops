@@ -208,3 +208,15 @@ Reported end-of-training validation metrics:
 The model predicted **no detections** on image 8 at confidence threshold 0.10. Image 8 currently has no ground-truth label, so this is a visual prediction check, not a measurable test result. With only five training images, two validation images, and five epochs, these results are not evidence of a reliable tree detector.
 
 The actual training output directory reported by Ultralytics was `runs/detect/runs/tree_detection/first_experiment`; the prediction directory was `runs/detect/runs/tree_detection/predict_image_8`. These paths are based on the user's terminal output. The dataset was described as Google Maps screenshots; this log records the experiment but does not establish that the imagery may lawfully be used for model training or publication. Confirm applicable terms before further training or sharing derived artifacts.
+
+
+### Training-curve review — results.csv supplied by user
+
+- [x] Reviewed the five epoch rows from `results.csv`.
+- [x] Recorded that per-epoch precision stayed at 0.00333, recall at 0.5, mAP50 at 0.01053, and mAP50-95 at 0.00394.
+- [x] Observed that validation box/class/L1 losses are identical across all five rows (2.24818, 7.38486, and 0.02417); this deserves investigation and should not be interpreted as evidence of improvement.
+- [x] Observed that training box loss and class loss fluctuate and are higher at epoch 5 than epoch 1.
+- [ ] Before changing epochs or hyperparameters, verify the dataset configuration, labels, and the small validation set; a two-image validation set makes metrics very unstable.
+- [ ] Confirm rights for the Google Maps screenshots before further model training or sharing model artifacts.
+
+The per-epoch `results.csv` values are the source for this review. They show very poor measured detection quality on the current tiny validation set, not a reliable estimate of how a tree detector would perform on new imagery. The earlier end-of-training console summary showed slightly different mAP values (mAP50 0.0103 and mAP50-95 0.00387); retain both records rather than silently treating them as identical.
