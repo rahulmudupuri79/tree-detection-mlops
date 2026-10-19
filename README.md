@@ -93,3 +93,26 @@ python -m pytest -q
 ```
 
 CI currently checks code quality and dataset-validator behavior only. It does **not** train a model, validate model accuracy, establish dataset licensing, or make this repository production-ready. Those require separate evidence and milestones.
+
+
+## Inference API and container
+
+A reference FastAPI service is available in `src/inference_api.py`. It exposes liveness/readiness probes and a `POST /predict` endpoint with upload-size and image validation. See [production operations](docs/production_operations.md) for its contract, configuration, Docker commands, and remaining production requirements.
+
+The container runs as a non-root user and expects a reviewed model checkpoint to be mounted at runtime. Model weights are deliberately excluded from the Docker build context and image.
+
+## CI concurrency
+
+The CI workflow uses a workflow-wide concurrency group, so at most one run is active for this workflow across refs. GitHub Actions permits one pending run in that group; a newer pending run may replace the older pending run. The workflow also has a 10-minute job timeout.
+
+## Local API tests
+
+Install development dependencies and run:
+
+```powershell
+python -m pip install -r requirements-dev.txt
+ruff check src tests
+python -m pytest -q
+```
+
+The API tests use a fake model and generated in-memory images. They do not load real weights or establish model accuracy.
