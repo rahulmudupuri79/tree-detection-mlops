@@ -10,10 +10,17 @@ on:
 permissions:
   contents: read
 
+# Allow at most one active run for this workflow across all refs.
+# GitHub keeps one pending run; a newer pending run can replace an older pending run.
+concurrency:
+  group: ci-${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   quality:
     name: Lint and test (Python 3.13)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
