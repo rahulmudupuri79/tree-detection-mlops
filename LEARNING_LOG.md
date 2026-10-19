@@ -243,14 +243,14 @@ This is a user-reported visual review of image 6 only. It does not establish ann
 This records visual review of the two validation images only. With just two validation images, model-quality estimates remain highly unstable. The identical validation loss values in the five-epoch CSV remain unexplained.
 
 
-### MLOps foundation scaffold — created on feature branch
+### MLOps foundation scaffold — merged
 
 - [x] Added GitHub Actions workflow for linting and tests.
 - [x] Added separate development dependencies for pytest and Ruff.
 - [x] Added pytest configuration and four automated tests for the YOLO dataset validator.
 - [x] Added an MLOps readiness checklist that separates current foundations from production gaps.
 - [x] Updated the README with local quality-check commands and CI scope.
-- [ ] Confirm the pull-request CI run passes.
+- [x] Pull-request CI completed successfully: Ruff lint and all four pytest tests passed.
 - [ ] Run the quality checks locally in the Windows virtual environment and review results.
 
-Changes are on branch `feat/mlops-foundation` pending review. No local training or inference was run as part of this repository scaffold. CI checks code style and validator behavior; it does not verify model accuracy, data rights, or production readiness.
+Changes were merged to `main` through PR #2. No local training or inference was run as part of this repository scaffold. CI checks code style and validator behavior; it does not verify model accuracy, data rights, or production readiness.
