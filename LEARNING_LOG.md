@@ -230,3 +230,14 @@ The per-epoch `results.csv` values are the source for this review. They show ver
 - [ ] Confirm imagery usage rights before additional training.
 
 This is a user-reported visual review of image 6 only. It does not establish annotation quality for all images or explain the poor validation metrics.
+
+
+### Validation annotation visual check — image 7
+
+- [x] User ran the label-preview script for image 7.
+- [x] User confirmed the boxes looked correctly placed around the trees in image 7.
+- [x] Both validation images (6 and 7) have now received a user-reported visual review.
+- [ ] Confirm imagery usage rights before additional training.
+- [ ] Expand the permitted, labeled dataset and validation set before interpreting metrics or tuning the model.
+
+This records visual review of the two validation images only. With just two validation images, model-quality estimates remain highly unstable. The identical validation loss values in the five-epoch CSV remain unexplained.
