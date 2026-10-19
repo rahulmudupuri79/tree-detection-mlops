@@ -1,5 +1,5 @@
 # Tools used for local quality checks and CI.
-pytest>=8.3,<9
+pytest>=9.1.1,<10
 ruff>=0.11,<1
 fastapi>=0.115,<1
 httpx>=0.28,<1
