@@ -283,3 +283,17 @@ The API tests intentionally use a fake model and synthetic images; they test the
 - [ ] Add auth/TLS/rate limiting, structured telemetry and SLOs, deployment verification, model approval/rollback, and data/model provenance before any real public deployment.
 
 This milestone improves engineering foundations but does not certify the model or service for production. The tree model's earlier metrics were extremely poor, and the existing imagery's rights need to be confirmed before further training or distribution.
+
+
+### MLOps lifecycle reset — dataset governance milestone started
+
+- [x] Re-centered the roadmap on data governance, reproducible training, experiment tracking, evaluation gates, model lineage, drift, and controlled retraining.
+- [x] Added `docs/dataset_governance.md` describing provenance metadata, dataset identity, split discipline, leakage, and the limitations of structural validation.
+- [x] Added `configs/dataset_metadata.example.json` as a provenance template.
+- [x] Added `src/build_dataset_manifest.py` to inventory image/label files, compute SHA-256 hashes, record image dimensions and annotation-row counts, and generate a deterministic dataset fingerprint.
+- [x] Added tests for stable fingerprints, missing-label rejection, and placeholder provenance rejection.
+- [ ] Run Ruff and pytest in CI; fix any failures before merge.
+- [ ] On the user's Windows checkout, choose an ML-permitted dataset, complete its provenance metadata, run the validator, and generate a manifest.
+- [ ] Save the resulting dataset fingerprint with future MLflow runs.
+
+The manifest builder fails closed when a required label is missing; an intentionally empty image must have an empty label file. It expects the documented split-folder layout. It records inventory and file identity only; run the YOLO validator for structural label checks and manually review annotation quality separately. No local tests or dataset download have been run by the assistant.
