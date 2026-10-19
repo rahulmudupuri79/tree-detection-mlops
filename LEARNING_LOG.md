@@ -254,3 +254,19 @@ This records visual review of the two validation images only. With just two vali
 - [ ] Run the quality checks locally in the Windows virtual environment and review results.
 
 Changes were merged to `main` through PR #2. No local training or inference was run as part of this repository scaffold. CI checks code style and validator behavior; it does not verify model accuracy, data rights, or production readiness.
+
+
+### Production-hardening tranche — feature branch
+
+- [x] Serialized the CI workflow globally: at most one active run for the workflow, with GitHub's one-pending-run behavior documented.
+- [x] Added a FastAPI inference service with liveness/readiness endpoints and image upload validation.
+- [x] Added API tests using a fake model and synthetic image payloads.
+- [x] Added a non-root Dockerfile, model mount convention, and Docker build-context exclusions.
+- [x] Added Dependabot update proposals for Python, Docker, and GitHub Actions dependencies.
+- [x] Added operational documentation for endpoint behavior, configuration, container run commands, and remaining production requirements.
+- [ ] Confirm CI passes on the pull request and after merge.
+- [ ] Build and scan the Docker image in CI.
+- [ ] Lock dependencies and validate the actual model artifact and target deployment environment.
+- [ ] Add production authentication, rate limiting, telemetry, SLOs, model governance, and rollback procedures.
+
+The API tests intentionally use a fake model and synthetic images; they test the service contract and request validation, not the accuracy of the current tree detector. The repository is not claimed to be production-certified.
