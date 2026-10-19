@@ -164,3 +164,14 @@ Annotation guidance was added to `docs/tree_annotation_guide.md`. It defines con
 
 A validator was added at `src/validate_yolo_dataset.py`. It checks image/label basename matching, YOLO's five-field detection format, numeric normalized coordinates, class IDs, positive box sizes, and image boundaries. Missing label files are warnings because unlabeled test images may be intentional; labels with no matching image and invalid label values are errors.
 
+
+
+### YOLO annotation structural review
+
+- [x] Found seven committed label files under `datasets/annotations/`, named `1.txt` through `7.txt`, matching images `1.jpg` through `7.jpg` in `datasets/trees_rgb/`.
+- [x] Reviewed the committed label text: 17 bounding boxes total. Each row has five numeric values, class ID `0`, normalized center/size coordinates, positive width and height, and boxes within normalized image boundaries.
+- [ ] Run the local validator script to confirm the same result from the Windows checkout.
+- [ ] Visually inspect the boxes against the image pixels; numeric validation cannot verify annotation quality.
+- [ ] Annotate the six held-out test images separately before measuring test performance. Keep their labels out of training.
+
+Current status: **structural checks of the committed label text pass**. This is not yet a visual quality review or model evaluation.
